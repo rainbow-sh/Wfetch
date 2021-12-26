@@ -82,7 +82,7 @@ def main(help:bool=False, ascii:str='', place:str=None):
     \u001b[{COLOR}mPressure\u001b[0m\u001b[37m:       {round(WEATHER.pressure['press']/METRICS[5])}{METRICS[4]}
     \u001b[{COLOR}mWind\u001b[0m\u001b[37m:           {round(WEATHER.wind(METRICS[1])['speed'])}{METRICS[2]}@{WEATHER.wind()['deg']}°
     \u001b[{COLOR}mSunrise-sunset\u001b[0m\u001b[37m: {datetime.fromtimestamp(WEATHER.sunrise_time()).hour}:{datetime.fromtimestamp(WEATHER.sunrise_time()).minute}-{datetime.fromtimestamp(WEATHER.sunset_time()).hour}:{datetime.fromtimestamp(WEATHER.sunset_time()).minute}
-    '''.splitlines()
+    \u001b[0m'''.splitlines()
 
     # Print the info
     print('\n', end='') # Newline
