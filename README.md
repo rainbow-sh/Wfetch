@@ -78,11 +78,3 @@ wfetch --help
 ```
 
 ---
-
-## ToDo
-
-[] Better logo
-[] Better ascii art
-[] Settings
-
----
