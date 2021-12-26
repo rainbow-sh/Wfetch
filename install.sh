@@ -15,7 +15,7 @@ echo "Installing package requirements..."
 /usr/bin/python3 -m pip install -r ./requirements.txt > /dev/null
 
 echo "Installing package..."
-# Moving into src/wfetch directory
+# Moving into ./wfetch directory
 cd ./wfetch
 # Copying binary to path
 sudo cp -a ./wfetch.py /usr/local/bin/wfetch
