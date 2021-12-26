@@ -37,10 +37,7 @@ Python3
 ### Or from github
 
 ```shell
-git clone https://github.com/Gcat101/wfetch
-cd wfetch
-sh ./install.sh
-cd ../
+git clone "https://github.com/Gcat101/Wfetch.git"; cd ./Wfetch; sudo bash "install.sh"
 ```
 
 ## Getting the api key (IMPORTANT)
