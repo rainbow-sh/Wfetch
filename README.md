@@ -35,8 +35,7 @@ Python3
 ```shell
 git clone https://github.com/Gcat101/wfetch
 cd wfetch
-/usr/bin/python3 -m pip install -r ./requirements.txt
-cp -a ./src/wfetch/. /usr/local/bin
+sh ./install.sh
 ```
 
 ## Usage
