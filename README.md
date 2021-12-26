@@ -1,6 +1,6 @@
 # Wfetch
 
-**Neofetch/pfetch, but for weather.**
+**Neofetch/pfetch, but for weather**
 
 ![Logo](https://github.com/Gcat101/Wfetch/blob/master/Logo.png)
 
