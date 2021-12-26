@@ -20,7 +20,7 @@ cd ./wfetch
 # Copying binary to path
 sudo cp ./wfetch.py /usr/local/bin/wfetch
 # Copy icons to home
-cp -R ./icons ~/.wfetch/icons
+cp -R ./icons ~/.wfetch
 
 echo "Cleaning up..."
 # moving to parent directory
