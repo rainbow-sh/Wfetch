@@ -20,7 +20,7 @@
 
 - Cool logo for each weather condition
 
-- Abilty to choose logos
+- Ability to choose logos
 
 - See weather at different places
 
