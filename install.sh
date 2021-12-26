@@ -1,8 +1,32 @@
-# INSTALL SCRIPT
+#!bin/bash
 
-/usr/bin/python3 -m pip install -r ./requirements.txt # Installing requirements from requirements.txt
-cd ./wfetch # Cd-ing into src/wfetch directory
-mv ./wfetch.py ./wfetch # Removing .py from the wfetch.py name
-cp -a ./. /usr/local/bin # Copying all of the files to path
-cd ../../ # Un-cding
-rm -rf ./wfetch # Deleting the copied github folder
+# exit when any command fails
+set -e
+set -o pipefail
+
+# keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+# echo an error message before exiting
+trap 'ERROR_CODE=$?; FAILED_COMMAND=$LAST_COMMAND; tput setaf 1; echo "ERROR: command \"$FAILED_COMMAND\" failed with exit code $ERROR_CODE"; put sgr0;' ERR INT TERM
+
+
+echo "Installing package requirements..."
+# silencing command output and only printing errors
+/usr/bin/python3 -m pip install -r ./requirements.txt > /dev/null
+
+echo "Installing package..."
+# Moving into src/wfetch directory
+cd ./wfetch
+# Copying binary to path
+sudo cp -a ./wfetch.py /usr/local/bin/wfetch
+
+echo "Cleaning up..."
+# moving to parent directory
+cd ../../ 
+# Deleting the copied github folder
+rm -rf ./wfetch
+echo -e "Package Installed! \n"
+
+echo -e "Please add this line to your shell profile (You are using $SHELL):"
+echo "'export WEATHER_CLI_API=<your OWM api key>'"
+exit
