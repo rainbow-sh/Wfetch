@@ -36,7 +36,7 @@ Python3
 git clone https://github.com/Gcat101/wfetch
 cd wfetch
 sh ./install.sh
-cd
+cd ../
 ```
 
 ## Usage
