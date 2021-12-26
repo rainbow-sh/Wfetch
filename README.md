@@ -2,15 +2,11 @@
 
 **Neofetch/pfetch, but for weather.**
 
----
-
 ![Logo](https://github.com/Gcat101/Wfetch/blob/master/Logo.png)
-
----
 
 ## Features
 
-- Information about the weather outside
+- Information about the weather outside:
     1. Weather condition
     2. Temperature
     3. Humidity
@@ -24,23 +20,17 @@
 
 - See weather at different places
 
----
-
 ## Requirements
 
 Python3
 
----
-
 ## Installation
 
-Install through pip:
+### ~~Install through pip~~
 
-```shell
-/usr/bin/python3 -m pip install wfetch
-```
+**WIP**
 
-Or from source:
+### Or from github
 
 ```shell
 git clone https://github.com/Gcat101/wfetch
@@ -48,8 +38,6 @@ cd wfetch
 /usr/bin/python3 -m pip -r ./requirements.txt
 cp -a ./src/wfetch/. /usr/local/bin
 ```
-
----
 
 ## Usage
 
@@ -76,5 +64,3 @@ Get the manual:
 ```shell
 wfetch --help
 ```
-
----
