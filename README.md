@@ -4,7 +4,7 @@
 
 ---
 
-![Logo](logo.png)
+![Logo](https://github.com/Gcat101/Wfetch/blob/master/Logo.png)
 
 ---
 
