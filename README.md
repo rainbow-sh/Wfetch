@@ -43,6 +43,15 @@ sh ./install.sh
 cd ../
 ```
 
+## Getting the api key (IMPORTANT)
+
+1. Go to [OWM](https://openweathermap.org/) and click "api"
+2. Sign up
+3. Click "api keys"
+4. Create an api key
+5. Add `export WEATHER_CLI_API=(your api key)` to your ~/.bashrc
+6. You're ready to go!
+
 ## Usage
 
 Get the weather at your current location:
