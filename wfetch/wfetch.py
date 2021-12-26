@@ -66,7 +66,7 @@ def main(help:bool=False, ascii:str='', place:str=None):
     elif ascii.endswith('_night'): ASCIITYPE = 'night'
 
     # Get ascii icon
-    ICONPATH = os.path.join(os.path.dirname(__file__), 'icons') # Get the path to icon folder
+    ICONPATH = os.path.join(os.path.expanduser("~"), '.wfetch_icons') # Get the path to icon folder
     try: ICON = open(os.path.join(ICONPATH, 'neutral', f'{STATUS}.txt')).read().splitlines() # Get neutral icon from /icons/neutral directory
     except FileNotFoundError: # Except if file not found in /icons/neutral directory
         try: ICON = open(os.path.join(ICONPATH, ASCIITYPE, f'{STATUS}.txt')).read().splitlines() # Get icon from /icons/(day|night) directory

@@ -18,7 +18,9 @@ echo "Installing package..."
 # Moving into ./wfetch directory
 cd ./wfetch
 # Copying binary to path
-sudo cp -a ./wfetch.py /usr/local/bin/wfetch
+sudo cp ./wfetch.py /usr/local/bin/wfetch
+# Copy icons to home
+cp ./icons ~/.wfetch_icons
 
 echo "Cleaning up..."
 # moving to parent directory
