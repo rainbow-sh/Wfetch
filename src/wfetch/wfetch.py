@@ -77,11 +77,11 @@ def main(help:bool=False, ascii:str='', place:str=None):
     INFO = f'''    \u001b[1m\u001b[{COLOR}m{WEATHER.detailed_status.title().replace(" ", "")}\u001b[37m@{CITY.split(', ')[0]}\u001b[0m
     \u001b[1m\u001b[{COLOR}m{METRICS[3]}\u001b[37m:{DAYNIGHT.title()}\u001b[0m
 
-    \u001b[{COLOR}mTemperature\u001b[0m:    {round(WEATHER.temperature(METRICS[0])['temp'])}°{METRICS[0][0].upper()}
-    \u001b[{COLOR}mHumidity\u001b[0m:       {WEATHER.humidity}%
-    \u001b[{COLOR}mPressure\u001b[0m:       {round(WEATHER.pressure['press']/METRICS[5])}{METRICS[4]}
-    \u001b[{COLOR}mWind\u001b[0m:           {round(WEATHER.wind(METRICS[1])['speed'])}{METRICS[2]}@{WEATHER.wind()['deg']}°
-    \u001b[{COLOR}mSunrise-sunset\u001b[0m: {datetime.fromtimestamp(WEATHER.sunrise_time()).hour}:{datetime.fromtimestamp(WEATHER.sunrise_time()).minute}-{datetime.fromtimestamp(WEATHER.sunset_time()).hour}:{datetime.fromtimestamp(WEATHER.sunset_time()).minute}
+    \u001b[{COLOR}mTemperature\u001b[0m\u001b[37m:    {round(WEATHER.temperature(METRICS[0])['temp'])}°{METRICS[0][0].upper()}
+    \u001b[{COLOR}mHumidity\u001b[0m\u001b[37m:       {WEATHER.humidity}%
+    \u001b[{COLOR}mPressure\u001b[0m\u001b[37m:       {round(WEATHER.pressure['press']/METRICS[5])}{METRICS[4]}
+    \u001b[{COLOR}mWind\u001b[0m\u001b[37m:           {round(WEATHER.wind(METRICS[1])['speed'])}{METRICS[2]}@{WEATHER.wind()['deg']}°
+    \u001b[{COLOR}mSunrise-sunset\u001b[0m\u001b[37m: {datetime.fromtimestamp(WEATHER.sunrise_time()).hour}:{datetime.fromtimestamp(WEATHER.sunrise_time()).minute}-{datetime.fromtimestamp(WEATHER.sunset_time()).hour}:{datetime.fromtimestamp(WEATHER.sunset_time()).minute}
     '''.splitlines()
 
     # Print the info
