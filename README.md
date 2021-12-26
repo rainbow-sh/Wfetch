@@ -4,6 +4,10 @@
 
 ![Logo](https://github.com/Gcat101/Wfetch/blob/master/Logo.png)
 
+[![oxygen](https://forthebadge.com/images/badges/powered-by-oxygen.svg)](https://forthebadge.com)
+
+[![contributions](https://img.shields.io/badge/contributions-welcome-green)](https://img.shields.io/badge/contributions-welcome-green)
+
 ## Features
 
 - Information about the weather outside:
