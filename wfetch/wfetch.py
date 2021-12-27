@@ -66,8 +66,7 @@ def main(help:bool=False, ascii:str='', place:str=None):
     elif ascii.endswith('_night'): ASCIITYPE = 'night'
 
     # Get ascii icon
-
-    if "XDG_CONFIG_HOME" in os.environ:
+    if "XDG_CONFIG_HOME" in os.environ: # XDG_CONFIG_HOME support (thanks zsadroh)
         HOME=os.environ["XDG_CONFIG_HOME"]
         CONFIG_FOLDER = "wfetch"
     else:
@@ -111,6 +110,8 @@ def man():
 
     \u001b[1mAuthors & Contributors\u001b[0m:
     \u001b[1mG_cat\u001b[0m:                                Author (https://github.com/Gcat101)
+    \u001b[1mPure Cheekbones\u001b[0m:                      Install cleanup (https://github.com/pure-cheekbones)
+    \u001b[1mZsadroh\u001b[0m:                              XDG_CONFIG_HOME support (https://github.com/zsadroh)
     ''')
     exit(0) # Exit so main function does not get called
 
