@@ -70,7 +70,7 @@ def main(help:bool=False, ascii:str='', place:str=None):
     if "XDG_CONFIG_HOME" in os.environ:
         HOME=os.environ["XDG_CONFIG_HOME"]
         CONFIG_FOLDER = "wfetch"
-    else
+    else:
         HOME=os.path.expanduser("~")
         CONFIG_FOLDER = ".wfetch"
 
