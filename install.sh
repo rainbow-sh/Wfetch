@@ -1,17 +1,23 @@
 #!/bin/bash
 
-# exit when any command fails
+# Exit when any command fails
 set -e
 set -o pipefail
 
-# keep track of the last executed command
+# Keep track of the last executed command
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
-# echo an error message before exiting
+# Echo an error message before exiting
 trap 'ERROR_CODE=$?; FAILED_COMMAND=$LAST_COMMAND; tput setaf 1; echo "ERROR: command \"$FAILED_COMMAND\" failed with exit code $ERROR_CODE"; put sgr0;' ERR INT TERM
 
+# Curl install
+if ! test -d "wfetch"; then
+    git clone "https://github.com/Gcat101/Wfetch.git" 
+    cd ./Wfetch 
+    sudo bash "install.sh"
+fi
 
 echo "Installing package requirements..."
-# silencing command output and only printing errors
+# Silencing command output and only printing errors
 /usr/bin/python3 -m pip install -r ./requirements.txt > /dev/null
 
 echo "Installing package..."
@@ -24,7 +30,7 @@ cp ./wfetch.py /usr/local/bin/wfetch
 cp -R ./icons $WFETCH_CONFIG_FOLDER
 
 echo "Cleaning up..."
-# moving to parent directory
+# Moving to parent directory
 cd ../../ 
 # Deleting the copied github folder
 rm -rf ./wfetch
