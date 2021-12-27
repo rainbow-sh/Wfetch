@@ -66,7 +66,15 @@ def main(help:bool=False, ascii:str='', place:str=None):
     elif ascii.endswith('_night'): ASCIITYPE = 'night'
 
     # Get ascii icon
-    ICONPATH = os.path.join(os.path.expanduser("~"), '.wfetch', 'icons') # Get the path to icon folder
+
+    if "XDG_CONFIG_HOME" in os.environ:
+        HOME=os.environ["XDG_CONFIG_HOME"]
+        CONFIG_FOLDER = "wfetch"
+    else
+        HOME=os.path.expanduser("~")
+        CONFIG_FOLDER = ".wfetch"
+
+    ICONPATH = os.path.join(HOME, CONFIG_FOLDER, 'icons') # Get the path to icon folder
     try: ICON = open(os.path.join(ICONPATH, 'neutral', f'{STATUS}.txt')).read().splitlines() # Get neutral icon from /icons/neutral directory
     except FileNotFoundError: # Except if file not found in /icons/neutral directory
         try: ICON = open(os.path.join(ICONPATH, ASCIITYPE, f'{STATUS}.txt')).read().splitlines() # Get icon from /icons/(day|night) directory
