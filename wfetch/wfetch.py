@@ -114,7 +114,7 @@ def man():
 
     \u001b[1mAuthors & Contributors\u001b[0m:
     \u001b[1mG_cat\u001b[0m:                                Author (https://github.com/Gcat101)
-    \u001b[1mPure Cheekbones\u001b[0m:                      Install cleanup (https://github.com/pure-cheekbones)
+    \u001b[1mPure Cheekbones\u001b[0m:                      Install + .gitignore cleanup (https://github.com/pure-cheekbones)
     \u001b[1mZsadroh\u001b[0m:                              Install cleanup (https://github.com/zsadroh)
     \u001b[1mMatt (usmcamp)\u001b[0m:                       XDG_CONFIG_HOME support (https://github.com/usmcamp0811)
     ''')
