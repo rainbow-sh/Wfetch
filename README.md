@@ -40,10 +40,10 @@ Python3
 git clone "https://github.com/Gcat101/Wfetch.git"; cd ./Wfetch; sudo bash "install.sh"
 ```
 
-### Curl (experimental)
+### Curl
 
 ```shell
-curl -s https://raw.githubusercontent.com/Gcat101/Wfetch/master/install.sh | sudo bash -s
+sudo curl -s https://raw.githubusercontent.com/Gcat101/Wfetch/master/install.sh | sudo bash -s
 ```
 
 ## Getting the api key (IMPORTANT)
