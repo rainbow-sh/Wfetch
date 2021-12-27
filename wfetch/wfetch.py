@@ -82,7 +82,7 @@ def main(help:bool=False, ascii:str='', place:str=None, hpa:bool=False):
         HOME=os.path.expanduser("~")
         CONFIG_FOLDER = ".wfetch"
 
-    ICONPATH = os.path.join(HOME, CONFIG_FOLDER, 'icons') # Get the path to icon folder
+    ICONPATH = os.path.join(HOME, CONFIG_FOLDER) # Get the path to icon folder
     try: ICON = open(os.path.join(ICONPATH, 'neutral', f'{STATUS}.txt')).read().splitlines() # Get neutral icon from /icons/neutral directory
     except FileNotFoundError: # Except if file not found in /icons/neutral directory
         try: ICON = open(os.path.join(ICONPATH, ASCIITYPE, f'{STATUS}.txt')).read().splitlines() # Get icon from /icons/(day|night) directory
