@@ -15,7 +15,7 @@ import os # For system-related stuff
 # FUNCTIONS
 
 # Main function
-def main(help:bool=False, ascii:str='', place:str=None):
+def main(help:bool=False, ascii:str='', place:str=None, hpa:bool=False):
     # If "help" argument, call help function
     if help: man()
 
@@ -60,6 +60,11 @@ def main(help:bool=False, ascii:str='', place:str=None):
 
     if GEO['country'] == 'US': METRICS = ('fahrenheit', 'miles_hour', 'mph', datetime.today().strftime(r'%m-%d-%y'), 'inHg', 33.864) # US measurements
     else: METRICS = ('celsius', 'meters_sec', 'm/s', datetime.today().strftime(r'%d.%m.%y'), 'mmHg', 1.333) # EU measurements
+    
+    if hpa: # HPa support
+        METRICS = list(METRICS) # Convert METRICS to list
+        METRICS[4] = 'HPa' # Change mmHg/inHg to HPa
+        METRICS[5] = 1 # Change the number
     
     # Get day or night
     if datetime.fromtimestamp(WEATHER.sunrise_time()) > datetime.today() or datetime.fromtimestamp(WEATHER.sunset_time()) < datetime.today(): ASCIITYPE = DAYNIGHT = 'night'
