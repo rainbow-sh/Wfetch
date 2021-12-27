@@ -27,7 +27,9 @@ def main(help:bool=False, ascii:str='', place:str=None):
 
     # Set city to geolocation
     if not place: CITY = f"{GEO['city']}, {GEO['country']}"
-    else: CITY = ', '.join(place) # Set city to "place" argument (if given)
+    else: # Set city to "place" argument (if given)
+        if isinstance(place, tuple): CITY = ', '.join(place) # Join if recognized as tuple 
+        else: CITY = place # Do nothing if recognized as str/int
 
     # Get API key envirement variable and set CLIENT
     try: CLIENT = OWM(os.environ['WEATHER_CLI_API'])
@@ -39,7 +41,9 @@ def main(help:bool=False, ascii:str='', place:str=None):
     WM = CLIENT.weather_manager()
 
     # Get data from weather
-    try: WEATHER = WM.weather_at_place(CITY).weather
+    try:
+        if isinstance(CITY, int): WEATHER = WM.weather_at_id(CITY).weather # If CITY is a number, get weather at id
+        else: WEATHER = WM.weather_at_place(CITY).weather # If CITY is a string, get weather at place
     except exceptions.NotFoundError: # Except if city not found
         print("\u001b[1m\u001b[31mPLACE NOT FOUND.\u001b[0m")
         exit(1)
