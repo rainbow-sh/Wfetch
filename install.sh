@@ -13,7 +13,6 @@ trap 'ERROR_CODE=$?; FAILED_COMMAND=$LAST_COMMAND; tput setaf 1; echo "ERROR: co
 if ! test -d "wfetch"; then
     git clone "https://github.com/Gcat101/Wfetch.git" 
     cd ./Wfetch 
-    sudo bash "install.sh"
 fi
 
 echo "Installing package requirements..."
