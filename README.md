@@ -75,6 +75,12 @@ Get the weather from a different location:
 wfetch --place="London, UK"
 ```
 
+Get pressure in HPa units:
+
+```shell
+wfetch --hpa
+```
+
 Get the manual:
 
 ```shell
