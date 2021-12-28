@@ -108,8 +108,6 @@ def main(help:bool=False, ascii:str='', place:str=None, hpa:bool=False):
         except IndexError: print(line[1]) # If icon is bigger than info, print only icon
     print('\n', end='') # Newline
 
-    print(WEATHER.sunrise_time('date').astimezone(tz=None))
-
 # Help function
 def man():
     # Print the help string (self-explanatory)
