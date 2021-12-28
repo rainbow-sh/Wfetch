@@ -28,6 +28,14 @@
 
 Python3
 
+## Platforms
+
+Any unix system (linux, mac, bsd, etc.)
+
+**NOTE**
+
+If you are on windows, you might wanna try [C++ version made by Kuplynx](https://github.com/Kuplynx/ccwfetch)
+
 ## Installation
 
 ### ~~Pip~~
