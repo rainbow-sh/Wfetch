@@ -11,7 +11,7 @@ trap 'ERROR_CODE=$?; FAILED_COMMAND=$LAST_COMMAND; tput setaf 1; echo "ERROR: co
 
 # Curl install
 if ! test -d "wfetch"; then
-    git clone "https://github.com/Gcat101/Wfetch.git" 
+    git clone "https://github.com/Gcat101/Wfetch.git" > /dev/null
     cd ./Wfetch 
 fi
 
