@@ -67,7 +67,8 @@ def main(help:bool=False, ascii:str='', place:str=None, hpa:bool=False):
         METRICS[5] = 1 # Change the number
     
     # Get day or night
-    if WEATHER.sunrise_time('date').astimezone(tz=None) > datetime.today() or WEATHER.sunset_time('date').astimezone(tz=None).strftime('%-H:%M') < datetime.today(): ASCIITYPE = DAYNIGHT = 'night'
+    if WEATHER.sunrise_time('date').astimezone(tz=None) > datetime.today().astimezone(tz=None) or WEATHER.sunset_time('date').astimezone(tz=None) < datetime.today().astimezone(tz=None):
+        ASCIITYPE = DAYNIGHT = 'night'
     else: ASCIITYPE = DAYNIGHT = 'day'
     
     # Get day or night from "ascii" argument (if given)
