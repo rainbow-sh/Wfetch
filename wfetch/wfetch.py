@@ -67,7 +67,7 @@ def main(help:bool=False, ascii:str='', place:str=None, hpa:bool=False):
         METRICS[5] = 1 # Change the number
     
     # Get day or night
-    if datetime.fromtimestamp(WEATHER.sunrise_time()) > datetime.today() or datetime.fromtimestamp(WEATHER.sunset_time()) < datetime.today(): ASCIITYPE = DAYNIGHT = 'night'
+    if WEATHER.sunrise_time('date').astimezone(tz=None) > datetime.today() or WEATHER.sunset_time('date').astimezone(tz=None).strftime('%-H:%M') < datetime.today(): ASCIITYPE = DAYNIGHT = 'night'
     else: ASCIITYPE = DAYNIGHT = 'day'
     
     # Get day or night from "ascii" argument (if given)
@@ -97,7 +97,7 @@ def main(help:bool=False, ascii:str='', place:str=None, hpa:bool=False):
     \u001b[{COLOR}mHumidity\u001b[0m\u001b[37m:       {WEATHER.humidity}%
     \u001b[{COLOR}mPressure\u001b[0m\u001b[37m:       {round(WEATHER.pressure['press']/METRICS[5])}{METRICS[4]}
     \u001b[{COLOR}mWind\u001b[0m\u001b[37m:           {round(WEATHER.wind(METRICS[1])['speed'])}{METRICS[2]}@{WEATHER.wind()['deg']}°
-    \u001b[{COLOR}mSunrise-sunset\u001b[0m\u001b[37m: {datetime.fromtimestamp(WEATHER.sunrise_time()).strftime('%-H:%M')}-{datetime.fromtimestamp(WEATHER.sunset_time()).strftime('%-H:%M')}
+    \u001b[{COLOR}mSunrise-sunset\u001b[0m\u001b[37m: {WEATHER.sunrise_time('date').astimezone(tz=None).strftime('%-H:%M')}-{WEATHER.sunset_time('date').astimezone(tz=None).strftime('%-H:%M')}
     \u001b[0m'''.splitlines()
 
     # Print the info
@@ -106,6 +106,8 @@ def main(help:bool=False, ascii:str='', place:str=None, hpa:bool=False):
         try: print(f'\u001b[{COLOR}m' + line[1] + '\u001b[0m' + INFO[line[0]]) # Print icon line + info line
         except IndexError: print(line[1]) # If icon is bigger than info, print only icon
     print('\n', end='') # Newline
+
+    print(WEATHER.sunrise_time('date').astimezone(tz=None))
 
 # Help function
 def man():
