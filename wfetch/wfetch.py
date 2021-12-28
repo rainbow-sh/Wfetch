@@ -56,7 +56,7 @@ def main(help:bool=False, ascii:str='', place:str=None, hpa:bool=False):
 
     # Get the ascii art name
     if not ascii: STATUS = WEATHER.detailed_status.replace(" ", "_") # Get from weather data
-    else: STATUS = ascii.replace('_day', '').replace('_night', '') # Get the ascii art name from "ascii" argument (if given)
+    else: STATUS = ascii.replace(' ','_').replace('_day', '').replace('_night', '') # Get the ascii art name from "ascii" argument (if given)
 
     if GEO['country'] == 'US': METRICS = ('fahrenheit', 'miles_hour', 'mph', datetime.today().strftime(r'%m-%d-%y'), 'inHg', 33.864) # US measurements
     else: METRICS = ('celsius', 'meters_sec', 'm/s', datetime.today().strftime(r'%d.%m.%y'), 'mmHg', 1.333) # EU measurements
