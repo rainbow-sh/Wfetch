@@ -51,7 +51,7 @@ git clone "https://github.com/Gcat101/Wfetch.git"; cd ./Wfetch; sudo bash "insta
 ### Curl
 
 ```shell
-sudo curl -s https://raw.githubusercontent.com/Gcat101/Wfetch/master/install.sh | sudo bash -s
+curl -s https://raw.githubusercontent.com/Gcat101/Wfetch/master/install.sh | sudo bash -s
 ```
 
 ## Getting the api key (IMPORTANT)
