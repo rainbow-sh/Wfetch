@@ -1,0 +1,13 @@
+pkgbase = wfetch
+        pkgdesc = Neofetch/pfetch, but for weather
+        pkgver = 1.0
+        pkgrel = 1
+        url = https://github.com/Gcat101/Wfetch.git
+        arch = x86_64
+        license = GPL-3.0
+        depends = git python python-pip
+        provides = wfetch
+        source = git+https://github.com/Gcat101/Wfetch.git
+        md5sums = SKIP 
+
+pkgname = wfetch
