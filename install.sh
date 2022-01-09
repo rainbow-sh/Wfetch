@@ -25,7 +25,7 @@ cd ./wfetch
 # Copying binary to path
 cp ./wfetch.py /usr/local/bin/wfetch
 # Copy icons to opt
-cp ./icons /opt/wfetch
+cp -r ./icons /opt/wfetch
 
 echo "Cleaning up..."
 # Moving to parent directory
