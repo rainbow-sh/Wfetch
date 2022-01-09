@@ -25,7 +25,7 @@ cd ./wfetch
 # Copying binary to path
 cp ./wfetch.py /usr/local/bin/wfetch
 # Copy icons to home
-if [[ -n "${XDG_CONFIG_HOME}" ]] then 
+if [[ -n "${XDG_CONFIG_HOME}" ]]; then 
     WFETCH_CONFIG_FOLDER=~/.wfetch
 else
     WFETCH_CONFIG_FOLDER="${XDG_CONFIG_HOME}/.wfetch"
