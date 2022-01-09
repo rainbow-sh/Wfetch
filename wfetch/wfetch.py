@@ -76,14 +76,7 @@ def main(help:bool=False, ascii:str='', place:str=None, hpa:bool=False):
     elif ascii.endswith('_night'): ASCIITYPE = 'night'
 
     # Get ascii icon
-    if "XDG_CONFIG_HOME" in os.environ: # XDG_CONFIG_HOME support (thanks zsadroh)
-        HOME=os.environ["XDG_CONFIG_HOME"]
-        CONFIG_FOLDER = "wfetch"
-    else:
-        HOME=os.path.expanduser("~")
-        CONFIG_FOLDER = ".wfetch"
-
-    ICONPATH = os.path.join(HOME, CONFIG_FOLDER) # Get the path to icon folder
+    ICONPATH = os.path.join(os.sep, 'opt', 'wfetch') # Get the path to icon folder
     try: ICON = open(os.path.join(ICONPATH, 'neutral', f'{STATUS}.txt')).read().splitlines() # Get neutral icon from /icons/neutral directory
     except FileNotFoundError: # Except if file not found in /icons/neutral directory
         try: ICON = open(os.path.join(ICONPATH, ASCIITYPE, f'{STATUS}.txt')).read().splitlines() # Get icon from /icons/(day|night) directory
@@ -123,7 +116,7 @@ def man():
     \u001b[1mG_cat\u001b[0m:                                Author (https://github.com/Gcat101)
     \u001b[1mPure Cheekbones\u001b[0m:                      Install + .gitignore cleanup (https://github.com/pure-cheekbones)
     \u001b[1mZsadroh\u001b[0m:                              Install cleanup (https://github.com/zsadroh)
-    \u001b[1mMatt Camp\u001b[0m:                            XDG_CONFIG_HOME support (https://github.com/usmcamp0811)
+    \u001b[1mMatt Camp\u001b[0m:                            XDG_CONFIG_HOME support [DEPRECATED] (https://github.com/usmcamp0811)
     ''')
     exit(0) # Exit so main function does not get called
 

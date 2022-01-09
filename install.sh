@@ -24,13 +24,8 @@ echo "Installing package..."
 cd ./wfetch
 # Copying binary to path
 cp ./wfetch.py /usr/local/bin/wfetch
-# Copy icons to home
-if [[ -n "${XDG_CONFIG_HOME}" ]]; then 
-    WFETCH_CONFIG_FOLDER=~/.wfetch
-else
-    WFETCH_CONFIG_FOLDER="${XDG_CONFIG_HOME}/.wfetch"
-fi
-cp -R ./icons $WFETCH_CONFIG_FOLDER
+# Copy icons to opt
+cp ./icons /opt/wfetch
 
 echo "Cleaning up..."
 # Moving to parent directory

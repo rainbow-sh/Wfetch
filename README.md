@@ -45,7 +45,7 @@ If you are on windows, you might wanna try [C++ version made by Kuplynx](https:/
 ### Git
 
 ```shell
-git clone "https://github.com/Gcat101/Wfetch.git"; cd ./Wfetch; sudo bash "install.sh"
+git clone "https://github.com/Gcat101/Wfetch.git"; cd ./Wfetch; sudo ./install.sh
 ```
 
 ### Curl
