@@ -25,7 +25,11 @@ cd ./wfetch
 # Copying binary to path
 cp ./wfetch.py /usr/local/bin/wfetch
 # Copy icons to home
-[[ -n "${XDG_CONFIG_HOME}" ]] && WFETCH_CONFIG_FOLDER=~/.wfetch || WFETCH_CONFIG_FOLDER="${XDG_CONFIG_HOME}/.wfetch"
+if [[ -n "${XDG_CONFIG_HOME}" ]] then 
+    WFETCH_CONFIG_FOLDER=~/.wfetch
+else
+    WFETCH_CONFIG_FOLDER="${XDG_CONFIG_HOME}/.wfetch"
+fi
 cp -R ./icons $WFETCH_CONFIG_FOLDER
 
 echo "Cleaning up..."
