@@ -1,3 +1,7 @@
+# THIS REPOSITORY ISN'T ACTIVELY UPDATED ANYMORE
+
+## CHECK OUT MY NEW PROJECT [Gcat101/Tui-shop](https://github.com/Gcat101/Tui-shop)
+
 # Wfetch
 
 **Neofetch/pfetch, but for weather**
