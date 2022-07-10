@@ -117,6 +117,8 @@ def man():
     \u001b[1mPure Cheekbones\u001b[0m:                      Install + .gitignore cleanup (https://github.com/pure-cheekbones)
     \u001b[1mZsadroh\u001b[0m:                              Install cleanup (https://github.com/zsadroh)
     \u001b[1mMatt Camp\u001b[0m:                            XDG_CONFIG_HOME support [DEPRECATED] (https://github.com/usmcamp0811)
+    
+    \u001b[1mMade by rainbow.sh (https://github.com/rainbow-sh) and licensed under GPL-3.0\u001b[0m
     ''')
     exit(0) # Exit so main function does not get called
 
