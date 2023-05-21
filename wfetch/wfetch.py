@@ -25,17 +25,23 @@ def main(help:bool=False, ascii:str='', place:str=None, hpa:bool=False):
         print("\u001b[1m\u001b[31mLOW INTERNET CONNECTION.\u001b[0m")
         exit(1)
 
-    # Set city to geolocation
-    if not place: CITY = f"{GEO['city']}, {GEO['country']}"
-    else: # Set city to "place" argument (if given)
-        if isinstance(place, tuple): CITY = ', '.join(place) # Join if recognized as tuple 
-        else: CITY = place # Do nothing if recognized as str/int
-
     # Get API key envirement variable and set CLIENT
     try: CLIENT = OWM(os.environ['WEATHER_CLI_API'])
     except KeyError: # Except if API key variable not found
         print("\u001b[1m\u001b[31mAPI KEY NOT FOUND. TRY ADDING THIS TO YOUR BASH/ZSH PROFILES: export WEATHER_CLI_API=(your OWM api key)")
         exit(1)
+
+    # Set city to geolocation
+    if not place: CITY = f"{GEO['city']}, {GEO['country']}"
+    else: # Set city to "place" argument (if given)
+        if isinstance(place, tuple): CITY = ', '.join(place) # Join if recognized as tuple 
+        elif isinstance(place, int): 
+            city_info = CLIENT.city_id_registry().connection.execute("SELECT name, country FROM city WHERE city_id="+str(place)).fetchone() # Convert id to city name if recognized as int
+            if not city_info: # If city id not found
+                print("\u001b[1m\u001b[31mPLACE NOT FOUND.\u001b[0m") # Err
+                exit(1)
+            CITY = ', '.join(city_info) # Join city name and country
+        else: CITY = place # Do nothing if recognized as str
 
     # Get weather from api
     WM = CLIENT.weather_manager()
