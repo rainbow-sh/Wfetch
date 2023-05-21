@@ -1,6 +1,6 @@
 # Maintainer: SQL-ENWiki <sqlatenwiki@gmail.com>
 pkgname=wfetch-git
-pkgver=1.0.c9736b6ab114fd376ea12be674321cacd369ab8a
+pkgver=1.0.3feafcd1142441a7dcbe80b0d41e0a547a4672f9
 pkgrel=1
 pkgdesc="Neofetch/pfetch, but for weather"
 arch=('x86_64')
