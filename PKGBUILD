@@ -17,9 +17,10 @@ backup=()
 options=()
 install=
 changelog=
-source=("git+$url")
+source=("git+$url" "https://files.pythonhosted.org/packages/source/p/pyowm/pyowm-3.3.0.tar.gz")
 noextract=()
-md5sums=('SKIP')
+sha256sums=('SKIP'
+            '8196f77c91eac680676ed5ee484aae8a165408055e3e2b28025cbf60b8681e03')
 
 pkgver() {
   echo "1.0.$(git ls-remote https://github.com/rainbow-sh/Wfetch.git | grep refs/heads/master | cut -f 1)"
