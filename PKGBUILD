@@ -1,4 +1,6 @@
 # Maintainer: SQL-ENWiki <sqlatenwiki@gmail.com>
+# Maintainer: G_cat101 <gcatmail2@gmail.com>
+
 pkgname=wfetch-git
 pkgver=1.0.3feafcd1142441a7dcbe80b0d41e0a547a4672f9
 pkgrel=1
