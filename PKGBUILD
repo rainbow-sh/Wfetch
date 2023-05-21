@@ -2,7 +2,7 @@
 # Maintainer: G_cat101 <gcatmail2@gmail.com>
 
 pkgname=wfetch-git
-pkgver=1.0
+pkgver=1.0.3feafcd1142441a7dcbe80b0d41e0a547a4672f9
 pkgrel=1
 pkgdesc="Neofetch/pfetch, but for weather"
 arch=('x86_64')
@@ -31,5 +31,11 @@ pkgver() {
 package() {
   cd ./Wfetch
   install -DT wfetch/wfetch.py "$pkgdir/usr/local/bin/wfetch"
-  install -Dd wfetch/icons "$pkgdir/opt/wfetch"
+  install -Dd wfetch/icons/day "$pkgdir/opt/wfetch/day"
+  cp wfetch/icons/day/*.txt "$pkgdir/opt/wfetch/day"
+  install -Dd wfetch/icons/neutral "$pkgdir/opt/wfetch/neutral"
+  cp wfetch/icons/neutral/* "$pkgdir/opt/wfetch/neutral"
+  install -Dd wfetch/icons/night "$pkgdir/opt/wfetch/night"
+  cp wfetch/icons/night/* "$pkgdir/opt/wfetch/night"
+  install -DT wfetch/icons/unknown.txt "$pkgdir/opt/wfetch/unknown.txt"
 }
