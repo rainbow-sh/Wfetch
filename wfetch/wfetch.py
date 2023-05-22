@@ -115,7 +115,7 @@ def man():
     \u001b[1m--help\u001b[0m:                               Shows this message
     \u001b[1m--ascii="icon_name"\u001b[0m:                  Changes the icon to whatever you choose (ex. "light_rain")
                                             \u001b[1mNote\u001b[0m: Some icons have day and night variants, just add "_day" or "_night" to see them (ex. "clear_sky_night")
-    \u001b[1m--place="City, Country(2 Letters)"\u001b[0m:   Shows the weather at that place (ex. "London, UK")
+    \u001b[1m--place="City, Country(2 Letters)"\u001b[0m:   Shows the weather at that place (ex. "London, UK", or by ID ex. 4674006)
     \u001b[1m--hpa\u001b[0m:                                Shows pressure in HPa
 
     \u001b[1mAuthors & Contributors\u001b[0m:
